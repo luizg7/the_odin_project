@@ -1,0 +1,80 @@
+<html>
+<head>
+<title> Rock Paper Scissors</title>
+</head>
+<body>
+<script>
+
+alert("Are you ready to start the game?")
+
+let playerPlay = "";
+let playerSum = 0;
+let computerSum = 0;
+let ties = 0;
+
+game();
+
+let game = (playerSelection, computerSelection) => {
+  for (let i = 0; i <= 5; i++) {
+    console.log(playerSum + ' Player Score');
+    console.log(computerSum + ' Computer Score');
+    console.log(playerPlay + ' Player Play');
+    console.log(computerPlay + ' Computer Play');
+    console.log(i + 'Iterator');
+    let userChoice = prompt("Type : Paper, Rock or Scissors");
+    let playerPlay = userChoice.toLowerCase();
+    playRound(playerSelection, computerSelection);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  }
+}
+
+let computerPlay = () => {
+  let options = ['Rock', 'Paper', 'Scissors'];
+  let randomNum = Math.floor(Math.random() * 3);
+  return options[randomNum].toLowerCase();
+}
+
+let playRound = (playerSelection, computerSelection) => {
+
+    computerPlay();
+
+    if (playerSelection === computerSelection) {
+    ties++;
+    return "It's a tie!";
+ }  else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+    playerSum++;
+    return "You win! Rock beats Scissors";
+ }  else if (playerSelection === 'paper' && computerSelection === 'rock') {
+    playerSum++;
+    return "You win! Paper beats Rock";
+ }  else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+    playerSum++;
+    return "You win! Scissors beats Paper";
+ }  else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+    computerSum++;
+    return "You Lose! Rock beats Scissors";
+ }  else if (playerSelection === 'rock' && computerSelection === 'paper') {
+    computerSum++;
+    return "You Lose! Paper beats Rock";
+ }  else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+    computerSum++;
+    return "You Lose! Scissors beats Paper";
+ }
+}
+
+</script>
+</body>
+</html>
